@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Heart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .heart-button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .heart-button:hover {
+            transform: scale(1.1);
+        }
+
+        .love-container {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .big-heart {
+            font-size: 100px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .repeated-text {
+            font-size: 24px;
+            color: #ff1a1a;
+            animation: scrollText 6s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        .repeated-text-container {
+            height: 100px;
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .repeated-text div {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click the Button!</h1>
+    <button class="heart-button" onclick="showLove()">My Heart</button>
+    <div class="love-container" id="love-container">
+        <div class="big-heart">❤️</div>
+        <div class="repeated-text-container">
+            <div class="repeated-text">
+                <div>I love you</div>
+                <div>I love you</div>
+                <div>I love you</div>
+                <div>I love you</div>
+                <div>I love you</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLove() {
+            const container = document.getElementById('love-container');
+            container.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
